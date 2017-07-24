@@ -2,13 +2,23 @@ Answer each question in a written format
 
 1. What does semantic HTML mean?
 
+It gives meaning to html elements so programer have an easier time understanding what an element is used for.
+
 2. What is the box model?
+
+Box model is basically a box that surrounds every element in html. This box consists of a margin, padding, border, and the content it self. You can manipulate these components to change the shape, design and position of each html element.
 
 3. What is the difference between IDs and Classes?
 
+  IDs are used on single elements for css styling and classes are used on multiple elements that need the same styling.
+
 4. What does the z-index do?
 
+The Z-index is use for creating layering in web document. If you want a particular element to be on the top of a page you use the z-index to bring it forward.
+
 5. Summarize what the keyword 'this' is used for?
+
+
 
 6. What is a callback?
 
