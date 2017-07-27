@@ -18,21 +18,66 @@ The Z-index is use for creating layering in web document. If you want a particul
 
 5. Summarize what the keyword 'this' is used for?
 
+The "this" keyword only has referenced to the owner of the method/function where it is use for example in
+var person = {
+  firstName: 'Josh',
+  lastName: 'Smith',
 
-
+  fullName: function(){
+  return this.firstName + ' ' + this.lastName;
+  },
+}
+then if we were to console log person.fullName(); it would display Josh Smith. The "this" keyword in this context refers to the values of the properties used after the this keyword.
 6. What is a callback?
+
+  A callback is a function that you pass in as a parameter inside of another function.
 
 7. What is a closure?
 
+  A Closure is a function inside of another function. Closures have access to not only the variable listed in their curl brackets but also those listed in the outer function as well;
+
+
 8. How does prototype work?
 
-9. What is MVC?
+  Every function in javascript has a prototype. This prototype is empty by default and is used to add inheritance. For example:
 
+  function hello (name){
+  this.name = name;
+  }
+
+  hello.prototype.sayHello(){
+  console.log('hello ' + this.name);
+  }
+
+  var newName = new hello('Josh');
+
+  console.log(newName.hello());
+
+  this would log 'hello Josh'
+
+9. What is MVC?
+  MVC stand for model-view-controller and basically it's the architecture used to create web applications.
+  the model represents the data logic and rules of the application. The view is how the data is present to the
+  user to create a user experience and the controller is the link between the view and the model. It transfers
+  data from and to the model to the view.
 10. What is the component lifecycle?
+The Component lifecycle defines how a component is mounted and unmounted in an application. In react there are methods that you can use
+to preform tasks during certain parts of the component lifecycle.
+ComponentWillMount
+ComponentDidMount
+ComponentWillUnmount
 
 11. What is REST?
+  Rest stands for Representational State Transfer.
+  Rest is the protocol used for designing back-end API.
+  The protocol includes
+  GET
+  PUT
+  POST
+  DELETE
 
 12. Name three ways of getting data from the URL using express
+params, query, body
 
 create table users (
 id serial,
@@ -43,9 +88,16 @@ email varchar(255)
 12. Given the Schema above, write the following four basic CRUD db queries using postgres syntax
 
 -Get all users:
+select * from users
 
 -Create a new user with the name of 'your name' and an email of 'fake@fake.com':
-
+insert into users
+(name, email)
+values ('joshua', 'fake@fake.com');
 -Update the newly created user's name to 'Bobby Boy':
-
+  update users
+  set name = 'Bobby Boy'
+  where name = 'joshua'
 -Delete the newly updated user:
+  delete from users
+  where users.name = 'Bobby Boy'
